@@ -17,7 +17,6 @@ public:
     pair<TreeNode*, int> dfs(TreeNode* root, int x, TreeNode* parent, int depth, pair<TreeNode*, int> &p) {
         if(!root)
             return {};
-        cout << root->val << " ";
         dfs(root->left, x, root, depth+1, p);
         dfs(root->right, x, root, depth+1, p);
         if(root->val == x){
@@ -28,6 +27,7 @@ public:
 
     }
     bool isCousins(TreeNode* root, int x, int y) {
+        ios_base::sync_with_stdio(0);
         pair<TreeNode*, int> p, pp;
         p = dfs(root, x, root, 0, p);
         cout << endl;
